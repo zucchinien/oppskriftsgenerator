@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#2ecc71">
+    <meta name="format-detection" content="telephone=no">
+    <title>Sunne Vegetariske Oppskrifter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="apple-touch-icon" href="icon.png">
+    <style>
+        /* iOS-specific fixes */
+        @supports (-webkit-touch-callout: none) {
+            .container {
+                padding-top: env(safe-area-inset-top);
+            }
+            .generate-btn {
+                padding-bottom: calc(15px + env(safe-area-inset-bottom));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sunne Vegetariske Oppskrifter</h1>
+            <p>Oppdag deilige vegetariske oppskrifter fra hele verden</p>
+        </header>
+
+        <div class="category-buttons">
+            <button class="category-btn active" onclick="setCategory('all')">Alle</button>
+            <button class="category-btn" onclick="setCategory('rask')">Rask Mat</button>
+            <button class="category-btn" onclick="setCategory('helgekos')">Helgekos</button>
+            <button class="category-btn" onclick="setCategory('dessert')">Dessert</button>
+        </div>
+
+        <button class="generate-btn" onclick="generateRecipe()">Generer Tilfeldig Oppskrift</button>
+
+        <div class="recipe-card" id="recipeCard">
+            <div class="recipe-header">
+                <h2 class="recipe-title"></h2>
+                <div class="recipe-meta">
+                    <span class="prep-time"></span>
+                    <span class="recipe-cuisine"></span>
+                </div>
+            </div>
+            
+            <div class="recipe-content">
+                <div class="recipe-section">
+                    <h3>Ingredienser</h3>
+                    <ul class="ingredients"></ul>
+                </div>
+
+                <div class="recipe-section">
+                    <h3>Fremgangsmåte</h3>
+                    <ol class="instructions"></ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="recipes.js"></script>
+    <script src="app.js"></script>
+</body>
+</html> 
